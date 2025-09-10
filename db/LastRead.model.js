@@ -1,15 +1,12 @@
 import mongoose from "mongoose";
-
-const LastreadSchema = mongoose.Schema({
+const lastreadSchema = mongoose.Schema({
     userId:{
         type: mongoose.Schema.Types.ObjectId,
-        ref : 'User'
+        ref: 'User'
     },
-    BookId:{
+    bookId:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Book'
     }
 },{timestamps:true})
-
-
-export const LastRead = new mongoose.model('LastRead',LastreadSchema)
+export const LastRead = new mongoose.model('LastRead',lastreadSchema)

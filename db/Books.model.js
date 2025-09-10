@@ -1,8 +1,6 @@
 import mongoose  from "mongoose";
 
-
-
-const BookSchema = new mongoose.Schema({
+const bookSchema = new mongoose.Schema({
     id:{
         type:Number,
         required:true,
@@ -18,12 +16,10 @@ const BookSchema = new mongoose.Schema({
         type:String,
         lowercase:true
     },
-    NumberofChapters:{
+    numberofChapters:{
         type:Number,
         required:true,
     }
 },{timestamps:true})
 
-
-
-export const Book = mongoose.model('Book',BookSchema)
+export const Book = mongoose.model('Book',bookSchema)

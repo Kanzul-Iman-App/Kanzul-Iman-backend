@@ -30,18 +30,18 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    Gender:{
+    gender:{
         type:String,
         enum:['F',"M"],
     },
-    Age:{
+    age:{
         type:Number,
     },
     phoneNumber:{
         type:String,
         match: [/^\+?[1-9]\d{1,14}$/, "Please enter a valid phone number"] // for the validation of the mobile number 
     },
-    tokens:{
+    token:{
         type: String
     }
 
