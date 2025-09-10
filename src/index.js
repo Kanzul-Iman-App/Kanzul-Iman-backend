@@ -1,12 +1,13 @@
 import express from 'express';
+import connectDB  from '../db/index.js';
+import userRoutes from "../routes/userRoute.js";
 
 const app = new express();
-const PORT = process.env.PORT || 3000;
 
 app.get('/',(req,res)=>{
     res.send('HELLO');
 })
 
-app.listen(PORT, () => {
-    console.log(`Server is running on PORT:${PORT}`);
-});
+app.use('/users', userRoutes)
+
+await connectDB();
