@@ -9,4 +9,4 @@ const lastreadSchema = mongoose.Schema({
         ref:'Book'
     }
 },{timestamps:true})
-export const LastRead = new mongoose.model('LastRead',lastreadSchema)
+export const LastRead = mongoose.model('LastRead',lastreadSchema)
