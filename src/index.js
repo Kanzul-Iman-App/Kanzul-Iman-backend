@@ -1,12 +1,12 @@
 import express from 'express';
-import connectDB  from '../db/index.js';
-import userRoutes from "../routes/userRoute.js";
+import connectDB  from './db/index.js';
+import userRoutes from "./routes/userRoute.js";
 import dotenv from 'dotenv';
 
 // Import all models to register them with mongoose
-import '../db/User.model.js';
-import '../db/Books.model.js';
-import '../db/LastRead.model.js';
+import './db/User.model.js';
+import './db/Books.model.js';
+import './db/LastRead.model.js';
 
 dotenv.config();
 
@@ -20,8 +20,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/',(req,res)=>{
     res.send('HELLO');
 })
+app.get('/hello',(req,res)=>{
+    res.send('HELLO Raihan');
+})
 
-app.use('/users', userRoutes)
+app.use('/api/auth', userRoutes)
 
 // Connect to database and start server
 const startServer = async () => {
@@ -36,3 +39,4 @@ const startServer = async () => {
 };
 
 startServer();
+
