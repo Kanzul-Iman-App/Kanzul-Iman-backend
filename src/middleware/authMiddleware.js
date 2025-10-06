@@ -17,15 +17,13 @@ const authMiddleware = async (req , res, next )=> {
         if(!user) return res.status(401).json({
             message:'Unauthorised'
         })
-        req.user = user 
-        console.log('permission granted to the user to access the userProfile');
-        
+        req.user = user        
         next();
         
     } catch (error) {
         console.error('ERROR:', error)
         return res.status(500).json({
-            message:'the server error detected . Please try again later'
+            message:'the server error Please try again later'
         })
     }
 }

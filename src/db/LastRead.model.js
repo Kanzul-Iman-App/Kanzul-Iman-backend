@@ -4,7 +4,7 @@ const lastreadSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    bookId:{
+    lastRead:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Book'
     }

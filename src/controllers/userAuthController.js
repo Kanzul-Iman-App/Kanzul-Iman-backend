@@ -73,7 +73,6 @@ const loginUser = async (req, res) => {
             },
         })
     } catch (error) {
-        console.log('ERROR :', error.message)
         res.status(500).json({
             message: 'Server error. Please try again later'
         })
@@ -97,11 +96,10 @@ const logoutUser = async (req, res) => {
         user.token = null;
         await user.save();
 
-        res.status(200).json({
+        return res.status(200).json({
             message: 'Logout Successful'
         })
     } catch (error) {
-        console.log("logOut Error:", error.message);
         res.status(500).json({
             message: "Server error.Please try again later"
         })

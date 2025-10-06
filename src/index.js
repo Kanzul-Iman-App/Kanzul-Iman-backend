@@ -1,6 +1,9 @@
 import express from 'express';
 import connectDB  from './db/index.js';
-import userRoutes from "./routes/userRoute.js";
+import userRoutes from "./routes/userAuthRoute.js";
+import booksRoutes from "./routes/booksRoute.js"
+import userManageRoutes from "./routes/userManageRoute.js"
+import lastReadRoutes from './routes/lastReadRoute.js'
 import dotenv from 'dotenv';
 
 // Import all models to register them with mongoose
@@ -25,7 +28,9 @@ app.get('/hello',(req,res)=>{
 })
 
 app.use('/api/auth', userRoutes)
-
+app.use('/api',booksRoutes)
+app.use('/api',userManageRoutes)
+app.use('/api',lastReadRoutes)
 // Connect to database and start server
 const startServer = async () => {
     try {
